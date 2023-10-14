@@ -1,0 +1,22 @@
+(* Definindo as constantes *)
+q = 1.60*10^-19; (* Carga dos elétrons *)
+d = 0.1*10^-9;  (* Distância em metros *)
+
+(* Vetor posição do elétron 1 e elétron 2 *)
+r1 = {0, 0, 0};
+r2 = {d, 0, 0};
+
+(* Vetor de posição relativa entre os elétrons *)
+r = r2 - r1;
+
+(* Vetor unitário na direção de r *)
+rhat = r/Norm[r];
+
+(* Constante de permissividade do vácuo *)
+ε0 = 8.85*10^-12;
+
+(* Lei de Coulomb em forma vetorial *)
+F = (1/(4 Pi ε0)) (q q/Norm[r]^2) rhat
+
+(* Valor numérico da força *)
+N[F]
